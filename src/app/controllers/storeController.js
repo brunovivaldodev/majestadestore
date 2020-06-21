@@ -45,7 +45,6 @@ class StoreController {
   async index(req, res) {
     try {
       const store = await Store.findAll({ attributes: ['email', 'telephone', 'address'] });
-      if (!store) { return res.status(404).json({ error: 'No Stores Found' }); }
       return res.status(200).json(store);
     } catch (error) {
       return res.status(400).json(error);
@@ -78,6 +77,8 @@ class StoreController {
       return res.status(400).json(error);
     }
   }
+
+ 
 }
 
 module.exports = StoreController;

@@ -21,7 +21,7 @@ const authRequired = (req, res, next) => {
     if (err) {
       return res.status(401).json({ error: 'Token Invalid' });
     }
-    req.userId = decoded.id;
+    req.payload = {id : decoded.id};
   });
   return next();
 };
