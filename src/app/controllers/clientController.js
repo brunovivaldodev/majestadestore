@@ -67,11 +67,12 @@ class ClientController{
     async destroy(req,res){
         try {
             const { id } = req.params;
-            const client = await Client.findOne({attributes:['user_id'],where:{user_id:id}});
+            const client = await Client.findOne({attributes:['user_id','id'],where:{user_id:id}});
             if (!client) {
               return res.status(404).json({ error: 'Client No Found' });
             }
             client.deleted = true;
+            await client.save();
             const user = await User.findByPk(id);
             await user.destroy();
             return res.status(200).json({ message: 'Client deleted' });

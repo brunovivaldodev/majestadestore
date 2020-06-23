@@ -21,13 +21,13 @@ module.exports = {
         },
         user_id : {
           type : Sequelize.INTEGER,
-          allowNull : false,
+          allowNull : true,
           references : {
             model : 'users',
-            key : 'id',
-            onUpdate:'CASCADE',
-            onDelete:'SET NULL'
-          }
+            key : 'id'
+          },
+          onUpdate:'CASCADE',
+          onDelete:'SET NULL'
         }, 
         address: {
           type: Sequelize.JSON,
