@@ -77,8 +77,6 @@ class StoreController {
       return res.status(400).json(error);
     }
   }
-
- 
 }
 
 module.exports = StoreController;

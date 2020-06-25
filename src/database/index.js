@@ -5,7 +5,6 @@ const Store = require('../app/models/Store');
 const Client = require('../app/models/Client');
 const Product = require('../app/models/Product');
 
-
 const { development } = require('../config/database');
 
 const connection = new Sequelize(development);
@@ -15,6 +14,6 @@ Store.init(connection);
 Client.init(connection);
 Product.init(connection);
 
-Client.associate(connection.models)
+Client.associate(connection.models);
 
 module.exports = connection;

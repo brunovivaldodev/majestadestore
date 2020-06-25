@@ -1,10 +1,7 @@
 const bcrypt = require('bcryptjs');
-const {Op} = require('sequelize')
-
 
 const User = require('../models/User');
 const { generateToken } = require('../../helpers/token');
-const { where } = require('sequelize');
 
 class UserController {
   async store(req, res) {
@@ -25,7 +22,6 @@ class UserController {
 
       return res.status(403).json({ error: 'User already registed' });
     } catch (error) {
-      console.log(error);
       return res.status(400).json(error);
     }
   }
@@ -91,19 +87,16 @@ class UserController {
     }
   }
 
-  async userAdmin(req,res,next){
+  async userAdmin(req, res, next) {
     try {
-      const {id}= req.payload;
-      let user = await User.findByPk(id,{attributes : ['id']});
-      if(!user)
-          return res.status(403).json({error : 'Not Exists'});
+      const { id } = req.payload;
+      let user = await User.findByPk(id, { attributes: ['id'] });
+      if (!user) { return res.status(403).json({ error: 'Not Exists' }); }
 
-      user = await User.findOne({attributes:['id','permition'],where:{id :id, permition : 'admin' } });
-      if(!user)
-        return res.status(403).json({error : 'User is not Admin'});
-        return next();
+      user = await User.findOne({ attributes: ['id', 'permition'], where: { id, permition: 'admin' } });
+      if (!user) { return res.status(403).json({ error: 'User is not Admin' }); }
+      return next();
     } catch (error) {
-      console.log(error)
       return res.status(400).json(error);
     }
   }
