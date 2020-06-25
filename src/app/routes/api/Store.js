@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { authRequired } = require('../auth');
-const StoreController = require('../../controllers/storeController');
-const UserController = require('../../controllers/userControllers');
+const StoreController = require('../../controllers/store');
+const UserController = require('../../controllers/user');
 
 const storeController = new StoreController();
 const { userAdmin } = new UserController();

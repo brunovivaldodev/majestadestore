@@ -1,6 +1,6 @@
 const { Router } = require('express');
 
-const UserController = require('../../controllers/userControllers');
+const UserController = require('../../controllers/user');
 const { authRequired } = require('../auth');
 const {
   indexValidator, destroyValidator, showValidator, storeValidator, updateValidator,
