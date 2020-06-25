@@ -14,6 +14,10 @@ class Product extends Model {
       },
     }, { sequelize });
   }
+
+  static associate(models) {
+    Product.belongsToMany(models.Categories, { foreignKey: 'product_id', through: 'product_categories', as: 'categories' });
+  }
 }
 
 module.exports = Product;

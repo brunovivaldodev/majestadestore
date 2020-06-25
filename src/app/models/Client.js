@@ -21,7 +21,7 @@ class Client extends Model {
 
   static associate(models) {
     this.belongsTo(models.User, {
-      foreignKey: 'user_id', as: 'owner', onUpdate: 'CASCADE', onDelete: 'SET NULL',
+      foreignKey: 'user_id', as: 'owner',
     });
   }
 }

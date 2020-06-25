@@ -6,6 +6,7 @@ const userRoutes = require('./api/User');
 const storeRoutes = require('./api/Store');
 const clientRoutes = require('./api/Client');
 const productRoutes = require('./api/Product');
+const catregoriesRoutes = require('./api/Categories');
 
 const routes = Router();
 
@@ -14,6 +15,7 @@ routes.use('/session', sessionRoutes);
 routes.use('/store', storeRoutes);
 routes.use('/client', clientRoutes);
 routes.use('/product', productRoutes);
+routes.use('/categories', catregoriesRoutes);
 
 routes.use(errors());
 
