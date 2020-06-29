@@ -18,7 +18,7 @@ class Store extends Model {
         type: DataTypes.JSON,
       },
 
-    }, { sequelize, tableName: 'store' });
+    }, { sequelize });
   }
 }
 

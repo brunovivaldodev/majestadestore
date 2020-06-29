@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('product_categories', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('products_categories', {
     id: {
       type: Sequelize.INTEGER,
       autoIncrement: true,

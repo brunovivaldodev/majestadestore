@@ -4,11 +4,11 @@ class ProductController {
   async store(req, res) {
     try {
       const {
-        title, disponibility, describe, quantity,
+        title, disponibility, describe, quantity, price,
       } = req.body;
 
       const product = await Product.create({
-        title, describe, disponibility, quantity,
+        title, describe, disponibility, quantity, price,
       });
 
       return res.status(200).json(product);

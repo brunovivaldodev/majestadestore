@@ -7,6 +7,7 @@ const storeRoutes = require('./api/Store');
 const clientRoutes = require('./api/Client');
 const productRoutes = require('./api/Product');
 const catregoriesRoutes = require('./api/Categories');
+const productVariationRoutes = require('./api/Product_Variation');
 
 const routes = Router();
 
@@ -16,6 +17,7 @@ routes.use('/store', storeRoutes);
 routes.use('/client', clientRoutes);
 routes.use('/product', productRoutes);
 routes.use('/categories', catregoriesRoutes);
+routes.use('/variations', productVariationRoutes);
 
 routes.use(errors());
 

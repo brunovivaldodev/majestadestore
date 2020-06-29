@@ -91,7 +91,7 @@ class UserController {
     try {
       const { id } = req.payload;
       let user = await User.findByPk(id, { attributes: ['id'] });
-      if (!user) { return res.status(403).json({ error: 'Not Exists' }); }
+      if (!user) { return res.status(403).json({ error: 'User not Exists' }); }
 
       user = await User.findOne({ attributes: ['id', 'permition'], where: { id, permition: 'admin' } });
       if (!user) { return res.status(403).json({ error: 'User is not Admin' }); }

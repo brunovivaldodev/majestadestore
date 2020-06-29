@@ -1,22 +1,18 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('store',
+  up: (queryInterface, Sequelize) => queryInterface.createTable('deliveries',
     {
       id: {
         type: Sequelize.INTEGER,
-        primaryKey: true,
         autoIncrement: true,
+        primaryKey: true,
         allowNull: false,
       },
-      name: {
-        type: Sequelize.STRING(120),
+      status: {
+        type: Sequelize.ENUM('Done', 'In Process', 'Canceled'),
         allowNull: false,
       },
-      email: {
-        type: Sequelize.STRING(),
-        allowNull: false,
-      },
-      telephone: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER),
+      costs: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       address: {
@@ -31,7 +27,8 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
+
     }),
 
-  down: (queryInterface) => queryInterface.dropTable('store'),
+  down: (queryInterface) => queryInterface.dropTable('deliveries'),
 };

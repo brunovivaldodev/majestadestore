@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
-class Product extends Model {
+class productVariation extends Model {
   static init(sequelize) {
     super.init({
       title: DataTypes.STRING,
@@ -13,12 +13,12 @@ class Product extends Model {
       quantity: {
         type: DataTypes.INTEGER,
       },
-    }, { sequelize });
+    }, { sequelize, tableName: 'products_variations' });
   }
 
   static associate(models) {
-    Product.belongsToMany(models.Categories, { foreignKey: 'product_id', through: 'product_categories', as: 'categories' });
+    productVariation.belongsTo(models.Product, { foreignKey: 'product_id', as: 'product' });
   }
 }
 
-module.exports = Product;
+module.exports = productVariation;

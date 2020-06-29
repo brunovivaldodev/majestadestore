@@ -1,10 +1,19 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('products', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('products_variations', {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
+    },
+    product_id: {
+      type: Sequelize.INTEGER,
+      references: {
+        model: 'products',
+        key: 'id',
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE',
     },
     title: {
       type: Sequelize.STRING,
@@ -43,5 +52,5 @@ module.exports = {
     },
   }),
 
-  down: (queryInterface) => queryInterface.dropTable('products'),
+  down: (queryInterface) => queryInterface.dropTable('product_variations'),
 };
