@@ -5,7 +5,7 @@ const Store = require('../app/models/Store');
 const Client = require('../app/models/Client');
 const Product = require('../app/models/Product');
 const Categories = require('../app/models/Categories');
-const productVariation = require('../app/models/productVariation');
+const productVariation = require('../app/models/Product_Variation');
 
 const { development } = require('../config/database');
 

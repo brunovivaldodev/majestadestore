@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 const UserControllers = require('../../controllers/user');
 const { authRequired } = require('../auth');
-const ProductVariationController = require('../../controllers/product_variation');
+const ProductVariationController = require('../../controllers/Product_variation');
 
 const routes = Router();
 const { userAdmin } = new UserControllers();

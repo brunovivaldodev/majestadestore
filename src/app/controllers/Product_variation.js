@@ -1,4 +1,4 @@
-const productVariation = require('../models/productVariation');
+const productVariation = require('../models/Product_Variation');
 
 class ProductVariationController {
   async store(req, res) {
