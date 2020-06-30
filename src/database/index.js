@@ -6,6 +6,7 @@ const Client = require('../app/models/Client');
 const Product = require('../app/models/Product');
 const Categories = require('../app/models/Categories');
 const productVariation = require('../app/models/Product_Variation');
+const Order = require('../app/models/Order');
 
 const { development } = require('../config/database');
 
@@ -17,10 +18,12 @@ Client.init(connection);
 Product.init(connection);
 Categories.init(connection);
 productVariation.init(connection);
+Order.init(connection);
 
 Client.associate(connection.models);
 Product.associate(connection.models);
 Categories.associate(connection.models);
 productVariation.associate(connection.models);
+Order.associate(connection.models);
 
 module.exports = connection;

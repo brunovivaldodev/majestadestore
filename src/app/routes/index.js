@@ -8,6 +8,7 @@ const clientRoutes = require('./api/Client');
 const productRoutes = require('./api/Product');
 const catregoriesRoutes = require('./api/Categories');
 const productVariationRoutes = require('./api/Product_Variation');
+const orderRoutes = require('./api/Order');
 
 const routes = Router();
 
@@ -18,6 +19,7 @@ routes.use('/client', clientRoutes);
 routes.use('/product', productRoutes);
 routes.use('/categories', catregoriesRoutes);
 routes.use('/variations', productVariationRoutes);
+routes.use('/order', orderRoutes);
 
 routes.use(errors());
 

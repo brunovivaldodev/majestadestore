@@ -16,7 +16,7 @@ class Client extends Model {
       address: {
         type: DataTypes.JSON,
       },
-    }, { sequelize, tableName: 'client' });
+    }, { sequelize });
   }
 
   static associate(models) {
