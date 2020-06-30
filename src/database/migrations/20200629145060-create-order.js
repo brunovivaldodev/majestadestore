@@ -11,28 +11,10 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
-      paymemt_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'payments',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-      },
       client_id: {
         type: Sequelize.INTEGER,
         references: {
           model: 'clients',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-      },
-      delivery_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'deliveries',
           key: 'id',
         },
         onUpdate: 'CASCADE',
