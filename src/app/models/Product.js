@@ -18,6 +18,7 @@ class Product extends Model {
 
   static associate(models) {
     Product.belongsToMany(models.Categories, { foreignKey: 'product_id', through: 'product_categories', as: 'categories' });
+    Product.belongsToMany(models.Order, { foreignKey: 'product_id', through: 'products_orders', as: 'Order' });
   }
 }
 
