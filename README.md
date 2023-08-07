@@ -5,7 +5,7 @@
 
 ### ⚽🚴🏾‍♂️🥋
 
-#### 🚧 Majestade Store 🎁 em construção... 🚧
+#### 🚧 Majestade Store 🎁
 
   
 
